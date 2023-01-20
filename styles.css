@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  transition: all 0.2s linear;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+.section {
+  padding: 5rem 0;
+}
+.section-center {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.underline {
+  background: rgb(21, 66, 200);
+  height: 0.25rem;
+  width: 3rem;
+  border-radius: 10%;
+  margin-bottom: 2rem;
+}
+/*****Blog*****/
+.card {
+  height: 24rem;
+  position: relative;
+  perspective: 1500px;
+}
+.card p {
+  padding: 1rem;
+}
+.card h4 {
+  padding: 1rem;
+}
+.card-side {
+  transition: all 2s linear;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.card-front {
+  background: rgb(203, 129, 235);
+  color: white;
+}
+.card-back {
+  background: rgb(32, 222, 171);
+  transform: rotateY(180deg);
+  display: grid;
+  align-items: center;
+}
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card-back {
+  transform: rotateY(0);
+}
+.blog-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2.5rem 1.5rem;
+}
+
+/****** Services*****/
+.service-cards .underline {
+  height: 0.12rem;
+  width: 3rem;
+  display: inline-block;
+  transition: var(--transition);
+}
+.section-services {
+  background: rgb(205, 202, 202);
+  min-width: 100vw;
+}
+@media screen and (min-width: 676px) {
+  .service-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .service-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.card-service {
+  background: white;
+  border-radius: 2rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  align-items: center;
+  margin: 1rem;
+  transition: var(--transition);
+}
+.card-service:hover {
+  background: rgb(224, 106, 224);
+  color: white;
+}
+.card-service:hover .underline {
+  background: white;
+}
+/*****timeline****/
+
+.timeline-item {
+  padding-left: 1rem;
+  padding-right: 0;
+  border-top: 3px dashed orange;
+  text-align: center;
+}
+.timeline-item:nth-child(even) {
+  border-left: 3px dashed orange;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+.timeline-item:nth-child(odd) {
+  border-right: 3px dashed orange;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.timeline-item:first-child {
+  border-top: 0;
+}
